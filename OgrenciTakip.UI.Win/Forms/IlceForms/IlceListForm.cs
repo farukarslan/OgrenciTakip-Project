@@ -26,6 +26,7 @@ namespace OgrenciTakip.UI.Win.Forms.IlceForms
             Tablo = tablo;
             BaseKartTuru = KartTuru.Ilce;
             Navigator = longNavigator.Navigator;
+            Text = Text + $" - ({_ilAdi})";
         }
 
         protected override void Listele()
