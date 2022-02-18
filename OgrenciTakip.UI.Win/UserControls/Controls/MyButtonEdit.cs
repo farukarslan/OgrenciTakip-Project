@@ -35,10 +35,12 @@ namespace OgrenciTakip.UI.Win.UserControls.Controls
                 _id = value;
 
                 IdChanged?.Invoke(this, new IdChangedEventArgs(oldValue, newValue)); //IdChanged null değil ise event i tetikle
+                EnabledChange(this, EventArgs.Empty);
             }
         }
 
-        public event EventHandler<IdChangedEventArgs> IdChanged; 
+        public event EventHandler<IdChangedEventArgs> IdChanged;
+        public event EventHandler EnabledChange = delegate { };
         #endregion
     }
 

@@ -3,7 +3,9 @@ using Common.Message;
 using DevExpress.XtraBars;
 using DevExpress.XtraGrid.Views.Grid;
 using EntityLayer.Model.Entities.Base;
+using OgrenciTakip.UI.Win.UserControls.Controls;
 using System;
+using System.Windows.Forms;
 
 namespace OgrenciTakip.UI.Win.Funcitons
 {
@@ -127,6 +129,18 @@ namespace OgrenciTakip.UI.Win.Funcitons
             }
             var id = Id();
             return islemTuru == IslemTuru.EntityUpdate ? selectedEntity.Id : long.Parse(Id());
+        }
+
+        public static void ControlEnabledChange(this MyButtonEdit baseEdit, Control prmEdit)
+        {
+            switch (prmEdit)
+            {
+                case MyButtonEdit edt:
+                    edt.Enabled = baseEdit.Id.HasValue && baseEdit.Id > 0;
+                    edt.Id = null;
+                    edt.EditValue = null;
+                    break;
+            }
         }
     }
 }

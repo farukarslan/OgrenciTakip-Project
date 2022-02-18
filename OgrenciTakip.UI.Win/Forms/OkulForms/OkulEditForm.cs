@@ -87,5 +87,17 @@ namespace OgrenciTakip.UI.Win.Forms.OkulForms
                 }
             }
         }
+
+        protected override void Control_EnabledChange(object sender, EventArgs e)
+        {
+            if (sender != txtIl)
+            {
+                return;
+            }
+            else
+            {
+                txtIl.ControlEnabledChange(txtIlce);
+            }
+        }
     }
 }
