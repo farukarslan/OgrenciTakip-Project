@@ -142,5 +142,22 @@ namespace OgrenciTakip.UI.Win.Funcitons
                     break;
             }
         }
+
+        public static void RowFocus(this GridView tablo, string aranacakKolon, object aranacakDeger)
+        {
+            var rowHandle = 0;
+
+            for (int i = 0; i < tablo.RowCount; i++)
+            {
+                var bulunanDeger = tablo.GetRowCellValue(i, aranacakKolon);
+
+                if (aranacakDeger.Equals(bulunanDeger))
+                {
+                    rowHandle = i;
+                }
+            }
+
+            tablo.FocusedRowHandle = rowHandle;
+        }
     }
 }
