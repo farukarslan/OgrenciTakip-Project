@@ -37,7 +37,7 @@ namespace OgrenciTakip.UI.Win.Forms.IlceForms
         protected override void ShowEditForm(long id)
         {
             var result = new ShowEditForms<IlceEditForm>().ShowDialogEditForm(KartTuru.Ilce, id, _ilId, _ilAdi);
-            // İşlem yapılacak
+            ShowEditFormDefault(result);
         }
 
     }

@@ -7,7 +7,7 @@ namespace OgrenciTakip.UI.Win.Show
 {
     public class ShowEditForms<TForm> : IBaseFormShow where TForm : BaseEditForm
     {
-        public long ShowDialogEditForm(KartTuru kartTuru, long id)//,params object[] prm)
+        public long ShowDialogEditForm(KartTuru kartTuru, long id)
         {
             //Yetki Kontrolü
 

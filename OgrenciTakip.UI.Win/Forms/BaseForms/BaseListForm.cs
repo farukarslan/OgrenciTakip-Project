@@ -90,6 +90,21 @@ namespace OgrenciTakip.UI.Win.Forms.BaseForms
         protected virtual void ShowEditForm(long id)
         {
             var result = FormShow.ShowDialogEditForm(BaseKartTuru, id);
+            ShowEditFormDefault(result);
+        }
+
+        protected void ShowEditFormDefault(long id)
+        {
+            if (id <= 0)
+            {
+                return;
+            }
+            else
+            {
+                AktifKartlariGoster = true;
+                FormCaptionAyarla();
+                Tablo.RowFocus("Id", id);
+            }
         }
 
         private void EntityDelete()
@@ -126,7 +141,24 @@ namespace OgrenciTakip.UI.Win.Forms.BaseForms
 
         private void FormCaptionAyarla()
         {
-            throw new NotImplementedException();
+            if (btnAktifPasifKartlar == null)
+            {
+                Listele();
+                return;
+            }
+
+            if (AktifKartlariGoster == true)
+            {
+                btnAktifPasifKartlar.Caption = "Pasif Kartlar";
+                Tablo.ViewCaption = Text;
+            }
+            else
+            {
+                btnAktifPasifKartlar.Caption = "Aktif Kartlar";
+                Tablo.ViewCaption = Text + " - Pasif Kartlar";
+            }
+
+            Listele();
         }
 
         private void IslemTuruSec()
