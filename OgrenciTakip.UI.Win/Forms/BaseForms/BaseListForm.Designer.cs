@@ -29,6 +29,7 @@ namespace OgrenciTakip.UI.Win.Forms.BaseForms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
@@ -127,7 +128,9 @@ namespace OgrenciTakip.UI.Win.Forms.BaseForms
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.sagMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sagMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -695,7 +698,17 @@ namespace OgrenciTakip.UI.Win.Forms.BaseForms
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "ribbonPage2";
             // 
-            // BaseKartlarForm
+            // sagMenu
+            // 
+            this.sagMenu.ItemLinks.Add(this.btnYeni);
+            this.sagMenu.ItemLinks.Add(this.btnSil);
+            this.sagMenu.ItemLinks.Add(this.btnSec);
+            this.sagMenu.ItemLinks.Add(this.btnDuzelt);
+            this.sagMenu.ItemLinks.Add(this.btnYenile);
+            this.sagMenu.Name = "sagMenu";
+            this.sagMenu.Ribbon = this.ribbonControl;
+            // 
+            // BaseListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -704,11 +717,12 @@ namespace OgrenciTakip.UI.Win.Forms.BaseForms
             this.Controls.Add(this.ribbonControl);
             this.IconOptions.ShowIcon = false;
             this.MinimizeBox = false;
-            this.Name = "BaseKartlarForm";
+            this.Name = "BaseListForm";
             this.Ribbon = this.ribbonControl;
             this.ShowInTaskbar = false;
             this.StatusBar = this.ribbonStatusBar1;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sagMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -758,5 +772,6 @@ namespace OgrenciTakip.UI.Win.Forms.BaseForms
         private DevExpress.XtraBars.BarButtonItem btnWordDosyasi;
         private DevExpress.XtraBars.BarButtonItem btnPdfDosyasi;
         private DevExpress.XtraBars.BarButtonItem btnTxtDosyasi;
+        private DevExpress.XtraBars.PopupMenu sagMenu;
     }
 }

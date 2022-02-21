@@ -39,9 +39,15 @@ namespace OgrenciTakip.UI.Win.Forms.BaseForms
             //Table Events
             Tablo.DoubleClick += Tablo_DoubleClick;
             Tablo.KeyDown += Tablo_KeyDown;
+            Tablo.MouseUp += Tablo_MouseUp;
 
             //Form Events
             Shown += BaseListForm_Shown;
+        }
+
+        private void Tablo_MouseUp(object sender, MouseEventArgs e)
+        {
+            e.SagMenuGoster(sagMenu);
         }
 
         private void BaseListForm_Shown(object sender, EventArgs e)
