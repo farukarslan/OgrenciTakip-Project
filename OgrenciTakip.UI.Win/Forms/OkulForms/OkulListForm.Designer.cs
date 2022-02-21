@@ -121,6 +121,7 @@ namespace OgrenciTakip.UI.Win.Forms.OkulForms
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             this.colId.OptionsColumn.AllowEdit = false;
+            this.colId.OptionsColumn.AllowFocus = false;
             this.colId.OptionsColumn.ShowInCustomizationForm = false;
             this.colId.StatusBarAciklama = null;
             this.colId.StatusBarKisayol = null;
@@ -134,6 +135,7 @@ namespace OgrenciTakip.UI.Win.Forms.OkulForms
             this.colKod.FieldName = "Kod";
             this.colKod.Name = "colKod";
             this.colKod.OptionsColumn.AllowEdit = false;
+            this.colKod.OptionsColumn.AllowFocus = false;
             this.colKod.StatusBarAciklama = null;
             this.colKod.StatusBarKisayol = null;
             this.colKod.StatusBarKisayolAciklama = null;
@@ -147,6 +149,7 @@ namespace OgrenciTakip.UI.Win.Forms.OkulForms
             this.colOkulAdi.FieldName = "OkulAdi";
             this.colOkulAdi.Name = "colOkulAdi";
             this.colOkulAdi.OptionsColumn.AllowEdit = false;
+            this.colOkulAdi.OptionsColumn.AllowFocus = false;
             this.colOkulAdi.StatusBarAciklama = null;
             this.colOkulAdi.StatusBarKisayol = null;
             this.colOkulAdi.StatusBarKisayolAciklama = null;
@@ -160,6 +163,7 @@ namespace OgrenciTakip.UI.Win.Forms.OkulForms
             this.colIldAdi.FieldName = "IlAdi";
             this.colIldAdi.Name = "colIldAdi";
             this.colIldAdi.OptionsColumn.AllowEdit = false;
+            this.colIldAdi.OptionsColumn.AllowFocus = false;
             this.colIldAdi.StatusBarAciklama = null;
             this.colIldAdi.StatusBarKisayol = null;
             this.colIldAdi.StatusBarKisayolAciklama = null;
@@ -173,6 +177,7 @@ namespace OgrenciTakip.UI.Win.Forms.OkulForms
             this.colIlceAdi.FieldName = "IlceAdi";
             this.colIlceAdi.Name = "colIlceAdi";
             this.colIlceAdi.OptionsColumn.AllowEdit = false;
+            this.colIlceAdi.OptionsColumn.AllowFocus = false;
             this.colIlceAdi.StatusBarAciklama = null;
             this.colIlceAdi.StatusBarKisayol = null;
             this.colIlceAdi.StatusBarKisayolAciklama = null;
@@ -186,6 +191,7 @@ namespace OgrenciTakip.UI.Win.Forms.OkulForms
             this.colAciklama.FieldName = "Aciklama";
             this.colAciklama.Name = "colAciklama";
             this.colAciklama.OptionsColumn.AllowEdit = false;
+            this.colAciklama.OptionsColumn.AllowFocus = false;
             this.colAciklama.StatusBarAciklama = null;
             this.colAciklama.StatusBarKisayol = null;
             this.colAciklama.StatusBarKisayolAciklama = null;
