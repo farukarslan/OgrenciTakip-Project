@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace BusinessLayer.General
 {
-    public class IlceBll : BaseBll<Ilce, OgrenciTakipContext>
+    public class IlceBll : BaseBll<Ilce, OgrenciTakipContext>, IBaseCommonBll
     {
         public IlceBll() { }
 

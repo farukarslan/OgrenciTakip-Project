@@ -13,7 +13,7 @@ using BusinessLayer.Interfaces;
 
 namespace BusinessLayer.General
 {
-    public class OkulBll : BaseBll<Okul, OgrenciTakipContext>, IBaseGenelBll
+    public class OkulBll : BaseBll<Okul, OgrenciTakipContext>, IBaseGenelBll, IBaseCommonBll
     {
         public OkulBll() { }
 
