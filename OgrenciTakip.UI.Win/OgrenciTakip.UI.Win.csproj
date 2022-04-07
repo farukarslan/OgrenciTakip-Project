@@ -115,6 +115,7 @@
     <Compile Include="Forms\OkulForms\OkulListForm.Designer.cs">
       <DependentUpon>OkulListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funcitons\FileFunctions.cs" />
     <Compile Include="Funcitons\FilterFunctions.cs" />
     <Compile Include="Funcitons\GeneralFunctions.cs" />
     <Compile Include="Funcitons\SelectFunctions.cs" />
