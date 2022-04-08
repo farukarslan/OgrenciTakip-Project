@@ -9,11 +9,14 @@ using OgrenciTakip.UI.Win.Funcitons;
 using Common.Message;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using OgrenciTakip.UI.Win.UserControls.Grid;
+using OgrenciTakip.UI.Win.Interfaces;
 
 namespace OgrenciTakip.UI.Win.Forms.BaseForms
 {
     public partial class BaseEditForm : RibbonForm
     {
+        private bool _formSablonKayitEdilecek;
         protected internal IslemTuru BaseIslemTuru;
         protected internal long Id;
         protected internal bool RefreshYapilacak;
@@ -43,10 +46,14 @@ namespace OgrenciTakip.UI.Win.Forms.BaseForms
             //Form Events
             Load += BaseEditForm_Load;
             FormClosing += BaseEditForm_FormClosing;
+            LocationChanged += BaseEditForm_LocationChanged;
+            SizeChanged += BaseEditForm_SizeChanged;
 
             void ControlEvents(Control control)
             {
                 control.KeyDown += Control_KeyDown;
+                control.GotFocus += Control_GotFocus;
+                control.Leave += Control_Leave;
 
                 switch (control)
                 {
@@ -91,9 +98,46 @@ namespace OgrenciTakip.UI.Win.Forms.BaseForms
             }
         }
 
+        private void Control_Leave(object sender, EventArgs e)
+        {
+            statusBarKisayol.Visibility = BarItemVisibility.Never;
+            statusBarKisayolAciklama.Visibility = BarItemVisibility.Never;
+        }
+
+        private void Control_GotFocus(object sender, EventArgs e)
+        {
+            var type = sender.GetType();
+
+            if (type == typeof(MyButtonEdit) || type == typeof(MyGridView) || type == typeof(MyPictureEdit) || type == typeof(MyComboBoxEdit)
+                || type == typeof(MyDateEdit))
+            {
+                statusBarKisayol.Visibility = BarItemVisibility.Always;
+                statusBarAciklama.Visibility = BarItemVisibility.Always;
+                statusBarKisayolAciklama.Visibility = BarItemVisibility.Always;
+
+                statusBarAciklama.Caption = ((IStatusBarAciklama)sender).StatusBarAciklama;
+                statusBarKisayol.Caption = ((IStatusBarKisayol)sender).StatusBarKisayol;
+                statusBarKisayolAciklama.Caption = ((IStatusBarKisayol)sender).StatusBarKisayolAciklama;
+            }
+            else if(sender is IStatusBarAciklama ctrl)
+            {
+                statusBarAciklama.Caption = ctrl.StatusBarAciklama; 
+            }
+        }
+
+        private void BaseEditForm_SizeChanged(object sender, EventArgs e)
+        {
+            _formSablonKayitEdilecek = true;
+        }
+
+        private void BaseEditForm_LocationChanged(object sender, EventArgs e)
+        {
+            _formSablonKayitEdilecek = true;
+        }
+
         private void BaseEditForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //SablonKaydet();
+            SablonKaydet();
 
             if (btnKaydet.Visibility == BarItemVisibility.Never || !btnKaydet.Enabled)
             {
@@ -106,9 +150,17 @@ namespace OgrenciTakip.UI.Win.Forms.BaseForms
             }
         }
 
-        private void SablonKaydet()
+        protected void SablonKaydet()
         {
-            throw new NotImplementedException();
+            if (_formSablonKayitEdilecek)
+            {
+                Name.FormSablonKaydet(Left, Top, Width, Height, WindowState);
+            }
+        }
+
+        private void SablonYukle()
+        {
+            Name.FormSablonYukle(this);
         }
 
         protected virtual void Control_EnabledChange(object sender, EventArgs e) { }
@@ -175,7 +227,7 @@ namespace OgrenciTakip.UI.Win.Forms.BaseForms
         {
             IsLoaded = true;
             GuncelNesneOlustur();
-            //SablonYukle();
+            SablonYukle();
             //ButonGizleGoster();
             Id = BaseIslemTuru.IdOlustur(OldEntity);
 

@@ -45,7 +45,6 @@ namespace OgrenciTakip.UI.Win.Funcitons
                 writer.WriteEndElement();
 
                 writer.WriteEndElement();
-                writer.WriteEndElement();
                 writer.Flush();
                 writer.Close();
             }
@@ -61,7 +60,7 @@ namespace OgrenciTakip.UI.Win.Funcitons
 
             try
             {
-                if (File.Exists(@"\Şablon Dosyaları\" + sablonAdi + "_location.xml"))
+                if (File.Exists(Application.StartupPath + @"\Şablon Dosyaları\" + sablonAdi + "_location.xml"))
                 {
                     var reader = XmlReader.Create(Application.StartupPath + @"\Şablon Dosyaları\" + sablonAdi + "_location.xml");
                     while (reader.Read())
@@ -124,7 +123,7 @@ namespace OgrenciTakip.UI.Win.Funcitons
         {
             try
             {
-                if (File.Exists(@"\Şablon Dosyaları\" + sablonAdi + ".xml"))
+                if (File.Exists(Application.StartupPath + @"\Şablon Dosyaları\" + sablonAdi + ".xml"))
                 {
                     tablo.RestoreLayoutFromXml(Application.StartupPath + $@"\Şablon Dosyaları\{sablonAdi}.xml");
                 }

@@ -187,7 +187,7 @@ namespace OgrenciTakip.UI.Win.Forms.BaseForms
             this.btnTxtDosyasi,
             this.btnBagliKartlar});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 41;
+            this.ribbonControl.MaxItemId = 42;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
