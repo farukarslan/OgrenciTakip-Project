@@ -59,5 +59,10 @@ namespace Common.Message
         {
             HataMesaji($"{alanAdi} alanına geçerli bir değer girmelisiniz.");
         }
+
+        public static DialogResult TabloExportMesaj(string dosyaFormati)
+        {
+            return EvetSeciliEvetHayir($"İlgili tablo {dosyaFormati} olarak dışarı aktarılacaktır. Onaylıyor musunuz?", "Aktarım Onay");
+        }
     }
 }
