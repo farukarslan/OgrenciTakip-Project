@@ -50,5 +50,14 @@ namespace Common.Message
             UyariMesaji("Lütfen bir kart seçiniz.");
         }
 
+        public static void MukerrerKayitHataMesaji(string alanAdi)
+        {
+            HataMesaji($"Girmiş olduğunuz {alanAdi} daha önce kullanılmıştır.");
+        }
+
+        public static void HataliVeriMesaji(string alanAdi)
+        {
+            HataMesaji($"{alanAdi} alanına geçerli bir değer girmelisiniz.");
+        }
     }
 }
