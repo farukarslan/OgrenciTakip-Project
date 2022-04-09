@@ -119,9 +119,9 @@ namespace OgrenciTakip.UI.Win.Forms.BaseForms
                 statusBarKisayol.Caption = ((IStatusBarKisayol)sender).StatusBarKisayol;
                 statusBarKisayolAciklama.Caption = ((IStatusBarKisayol)sender).StatusBarKisayolAciklama;
             }
-            else if(sender is IStatusBarAciklama ctrl)
+            else if (sender is IStatusBarAciklama ctrl)
             {
-                statusBarAciklama.Caption = ctrl.StatusBarAciklama; 
+                statusBarAciklama.Caption = ctrl.StatusBarAciklama;
             }
         }
 
@@ -229,7 +229,6 @@ namespace OgrenciTakip.UI.Win.Forms.BaseForms
             GuncelNesneOlustur();
             SablonYukle();
             //ButonGizleGoster();
-            Id = BaseIslemTuru.IdOlustur(OldEntity);
 
             //Güncelleme yapılacak.
         }
